@@ -1,0 +1,597 @@
+@import "fonts";
+@import "libs";
+@import "base";
+@import "vars";
+@import "_mixins/respond-to";
+
+// Пользовательские стили
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+
+  @include respond-to($large) {
+    font-size: 85%;
+  }
+}
+
+body {
+  opacity: 0;
+  transition: opacity 700ms;
+}
+
+#right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  will-change: opacity;
+  z-index: 2;
+  height: 1em;
+  margin: auto;
+  transition: .2s;
+  font-size: .8em;
+  color: #252525;
+  right: -4.2em;
+  left: auto;
+  letter-spacing: .07em;
+  opacity: 0;
+
+  @include respond-to($tablet-landscape) {
+    display: none;
+  }
+
+  &.dark {
+    color: #6d6d6d;
+  }
+}
+
+section {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  height: auto;
+  float: left;
+  clear: both;
+  position: relative;
+  padding: 8em 0;
+
+  p {
+    float: left;
+    clear: both;
+    color: #393939;
+    line-height: 2em;
+    letter-spacing: .023em;
+    font-size: 1.1em;
+  }
+}
+
+section#about,
+section#fabric {
+
+  .h1-label {
+    background-color: #fff;
+    color: #252525;
+  }
+
+  .h1-label.shadow {
+    box-shadow: 0 13px 18px rgba(11, 11, 11, 0.5);
+  }
+
+  h2 {
+    color: transparent;
+  }
+
+  p {
+    color: #d7d7d7;
+  }
+
+}
+
+section#about .bg,
+section#fabric .bg,
+section#contacts .bg {
+  @include respond-to($tablet-landscape) {
+    display: none;
+  }
+}
+
+.main {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+article {
+  margin: auto;
+  overflow: visible;
+  transition: .8s;
+  transition-timing-function: ease-out;
+  z-index: 2;
+  position: relative;
+  transform: translateY(0);
+  max-width: 80%;
+  opacity: 1;
+
+  @include respond-to($tablet-landscape) {
+    max-width: 75%;
+  }
+
+  .h1-label {
+    float: left;
+    padding: .62em 1.5em .52em;
+    font-size: .66em;
+    text-transform: uppercase;
+    overflow: hidden;
+    font-family: "RobotoMedium";
+    letter-spacing: 0.3em;
+    transition: 1.3s;
+    transition-delay: .7s;
+    transform-origin: left;
+    white-space: nowrap;
+  }
+}
+
+article.hidden {
+  opacity: 0;
+  transform: translateY(30vh);
+
+  .h1-label {
+    width: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+h1, h2, h3 {
+  float: left;
+  clear: both;
+  overflow: hidden;
+  text-transform: uppercase;
+  color: #262626;
+  line-height: normal;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 11.8em;
+  letter-spacing: .085em;
+  font-family: 'FuturaRegular';
+  color: $main_color_light;
+  margin: 0;
+  background: linear-gradient(to right, $main_color_light, $main_color_dark);
+  background-clip: text;
+  color: rgba(0,0,0,0);
+  text-transform: none;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 5.7em;
+  margin: 0;
+
+  @include respond-to($tablet-landscape) {
+    line-height: 1em;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #252525;
+}
+
+header, footer {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+}
+
+header {
+  top: 0;
+  left: 0;
+  padding: 0 2.5em;
+  text-transform: uppercase;
+
+  @include respond-to($tablet-landscape) {
+    position: absolute;
+  }
+
+  .left {
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    z-index: 2;
+
+    .border {
+      border: 1px solid transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: -13px;
+      left: -13px;
+      width: 78px;
+      height: 78px;
+      will-change: border, transform;
+      transition: .2s;
+      box-sizing: border-box;
+
+      @include respond-to($large) {
+        width: 78px;
+        height: 78px;
+      }
+    }
+  
+    .logo {
+      float: left;
+      position: relative;
+      display: block;
+      box-shadow: 0 13px 18px rgba(94, 94, 94, 0.35);
+      border-radius: 50%;
+      z-index: 1;
+  
+      img {
+        width: 52px;
+        height: 52px;
+        display: block;
+      }
+    }
+  
+    .logo-label {
+      float: left;
+      width: 16em;
+      height: 52px;
+      overflow: hidden;
+    }
+    
+    .logo-label-inner {
+      width: 100%;
+      height: 100%;
+      padding: 0 0 0 1.6em;
+      box-sizing: border-box;
+      color: #1c1c1c;
+      font-size: 1em;
+      letter-spacing: 0.18em;
+      line-height: 52px;
+      transform: translateX(0);
+      transition: transform 0.4s;
+      transition-delay: 0.1s;
+    }
+  }
+
+  nav {
+    float: right;
+    margin-top: 3.4em;
+    transition: .6s;
+
+    @include respond-to($tablet-portrait) {
+      margin-top: 0;
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      left: 0;
+      top: -110vh;
+      overflow: hidden;
+      background: #1d1d1d;
+      padding: 0;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      @include respond-to($tablet-portrait) {
+        width: 100%;
+        margin-top: 20vh;
+        float: left;
+      }
+
+      li {
+        float: left;
+        margin-right: 2.6em;
+
+        @include respond-to($tablet-portrait) {
+          width: 100%;
+          padding: 0;
+        }
+
+        a {
+          display: block;
+          font-family: "RobotoBold";
+          font-size: 0.77em;
+          letter-spacing: 0.15em;
+          padding: 1em .7em .5em 0;
+          position: relative;
+          overflow: hidden;
+
+          @include respond-to($tablet-portrait) {
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 3.5vh 0;
+            font-size: 1.6em;
+          }
+
+          &:after {
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            position: absolute;
+            border-bottom: 1px solid #252525;
+            transform: translateX(-101%);
+            transition: .25s ease-out;
+          }
+
+          &:hover {
+            &:after {
+              transform: translateX(0%);
+            }
+          }
+        }
+      }
+    }
+
+    &.opened {
+      top: 0;
+    }
+  }
+
+  .hamburger-ico {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 8.5em;
+    width: 6.5em;
+    cursor: pointer;
+
+    @include respond-to($tablet-portrait) {
+      display: block;
+    }
+
+    .part {
+      height: 2px;
+      width: 2.5em;
+      position: absolute;
+      left: 2em;
+      background: #1d1d1d;
+      transition: .3s;
+    }
+
+    .top {
+      top: 3.9em;
+    }
+
+    .cross {
+      top: 4.6em;
+    }
+
+    .bottom {
+      top: 5.3em;
+    }
+
+    &.cross {
+      .part {
+        background: #fff;
+      }
+      .top {
+        opacity: 0;
+        top: 4.6em;
+      }
+      .bottom {
+        opacity: 0;
+        top: 4.6em;
+      }
+
+      .cross.cross1 {
+        transform: rotate(45deg);
+      }
+      .cross.cross2 {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+footer {
+  bottom: 0;
+  padding: 0 2.5em;
+  transition: 1s;
+  height: 0;
+  overflow: visible;
+
+  &.dark {
+    color: #6d6d6d;
+
+    p.left {
+      opacity: 0;
+    }
+  }
+  
+  p {
+  
+    &.left {
+      position: absolute;
+      left: 3.8em;
+      bottom: 2.9em;
+      margin: 0;
+      font-size: .9em;
+      letter-spacing: .07em;
+      line-height: 1.6em;
+      color: #646476;
+      transition: .8s;
+      width: 50%;
+
+      span {
+        font-family: "RobotoMedium";
+        color: #252525;
+        font-weight: normal;
+        letter-spacing: .17em;
+        font-size: 1.05em;
+      }
+    }
+  
+    &.left.hidden {
+      opacity: 0;
+    }
+  
+  }
+}
+
+#services, #work {
+  background: #fff;
+}
+
+.dot {
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+  background-color: #848484;
+}
+.dot.top {
+  top: -2px;
+}
+.dot.right {
+  right: -2px;
+}
+.dot.bottom {
+  bottom: -2px;
+}
+.dot.left {
+  left: -2px;
+}
+.dot.top1 {
+  top: -1px;
+}
+.dot.right1 {
+  right: -1px;
+}
+.dot.bottom1 {
+  bottom: -1px;
+}
+.dot.left1 {
+  left: -1px;
+}
+
+// START styles for CONERS
+
+.main.noconers {
+
+  #right {
+    opacity: 1;
+  }
+
+  header {
+
+    .left {
+
+      .border {
+        border-color: #eaeaea;
+        transition-delay: 0.3s;
+      }
+
+      .logo-label-inner {
+        transform: translateX(-100%);
+        transition-delay: 0s;
+
+        @include respond-to($tablet-landscape) {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    nav {
+      transform: translateX(100%);
+      opacity: 0;
+
+      @include respond-to($tablet-landscape) {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+  }
+
+  footer {
+    opacity: 1;
+
+    p.left {
+      transform: translateX(-110%);
+    }
+  }
+  
+}
+
+// FINISH styles for CONERS
+
+.bottom-bg-section {
+  width: 100%;
+  float: left;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .02;
+    background: url('./../img/bg-first.svg') no-repeat center top;
+    background-size: cover;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .2;
+    background: url('./../img/bg-second.svg') no-repeat center top;
+    background-size: cover;
+  }
+
+  .black-bg {
+    position: absolute;
+    width: 100%;
+    height: 66.66%;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #1d1d1d;
+    z-index: -1;
+  }
+}
+
+@import "./sections/maxiru.scss";
+@import "./sections/services.scss";
+@import "./sections/works.scss";
+@import "./sections/about.scss";
+@import "./sections/fabric.scss";
+@import "./sections/contacts.scss";
+
+// @import "media"; // Всегда в конце

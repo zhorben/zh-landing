@@ -1,0 +1,10 @@
+$tablet-landscape : 'max-width: 992px';
+$tablet-portrait : 'max-width: 768px';
+$phone : 'max-width: 480px';
+$large: 'max-width: 1400px';
+
+@mixin respond-to($media) {
+  @media only screen and ($media) {
+    @content;
+  }
+}

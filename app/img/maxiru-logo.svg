@@ -1,0 +1,36 @@
+<svg id="maxiru-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="188 153 120 120">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #252525;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="72" height="50"/>
+    </clipPath>
+  </defs>
+  <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-2" cx="60" cy="60" r="60" transform="translate(188 153)"/>
+  <g id="Repeat_Grid_1" data-name="Repeat Grid 1" class="cls-3" transform="translate(212 188)">
+    <g transform="translate(-208 -183)">
+      <path id="Rectangle_1" data-name="Rectangle 1" class="cls-4" d="M0,0H0A16,16,0,0,1,16,16V50a0,0,0,0,1,0,0h0A16,16,0,0,1,0,34V0A0,0,0,0,1,0,0Z" transform="translate(208 183)"/>
+    </g>
+    <g transform="translate(-180 -183)">
+      <path id="Rectangle_1-2" data-name="Rectangle 1" class="cls-4" d="M0,0H0A16,16,0,0,1,16,16V50a0,0,0,0,1,0,0h0A16,16,0,0,1,0,34V0A0,0,0,0,1,0,0Z" transform="translate(208 183)"/>
+    </g>
+    <g transform="translate(-152 -183)">
+      <path id="Rectangle_1-3" data-name="Rectangle 1" class="cls-4" d="M0,0H0A16,16,0,0,1,16,16V50a0,0,0,0,1,0,0h0A16,16,0,0,1,0,34V0A0,0,0,0,1,0,0Z" transform="translate(208 183)"/>
+    </g>
+  </g>
+</svg>

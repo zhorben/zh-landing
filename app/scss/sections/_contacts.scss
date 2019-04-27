@@ -1,0 +1,93 @@
+#contacts {
+
+  article {
+    width: 60em;
+    padding-bottom: 8em;
+  }
+
+  h3 {
+    font-family: "RobotoBold";
+    font-size: 1.4em;
+    letter-spacing: 0.05em;
+    color: $main_color_light;
+    background: linear-gradient(left, $main_color_light, $main_color_dark);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #252525;
+    font-family: "Futura";
+    font-size: 4em;
+    clear: both;
+    float: left;
+    text-transform: uppercase;
+    margin-top: .13em;
+
+    @include respond-to($tablet-landscape) {
+      font-size: 5.5vw;
+    }
+
+    @include respond-to($phone) {
+      font-size: 7vw;
+    }
+  }
+  
+  .info-outer {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 50%;
+
+    @include respond-to($tablet-landscape) {
+      width: 100%;
+    }
+  }
+  
+  .info {
+    display: block;
+    float: left;
+    margin: 4.5em 0 0;
+    width: 100%;
+    height: 5.5em;
+    overflow: visible;
+    text-transform: uppercase;
+
+    @include respond-to($tablet-portrait) {
+      margin-top: 2.5em;
+    }
+  
+    .h1-label {
+      background: #252525;
+      color: #fff;
+      width: 16.2em;
+    }
+  
+    span, a {
+      display: block;
+      font-family: "Futura";
+      text-decoration: none;
+    }
+  
+    span {
+      clear: left;
+      float: left;
+      margin-top: .4em;
+      font-size: 2em;
+    }
+  
+    span a {
+      font-size: 1em;
+    }
+  }
+}
+
+
+
+
+
+
